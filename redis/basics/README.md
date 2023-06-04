@@ -125,43 +125,42 @@ docker rm my-redis
 1. Удалите ключ "my_key" из Redis.
 
 <details>
-    <summary>Решение</summary>
-
-    ```redis-cli
-    127.0.0.1:6379> SET my_key "Hello, Redis!"
-    OK
-    127.0.0.1:6379> GET my_key
-    "Hello, Redis!"
-    127.0.0.1:6379> LPUSH my_list apple banana orange
-    (integer) 3
-    127.0.0.1:6379> LPOP my_list
-    "orange"
-    127.0.0.1:6379> LRANGE my_list 0 -1
-    1) "banana"
-    2) "apple"
-    127.0.0.1:6379> SADD my_set red green blue
-    (integer) 3
-    127.0.0.1:6379> SMEMBERS my_set
-    1) "green"
-    2) "red"
-    3) "blue"
-    127.0.0.1:6379> SREM my_set green
-    (integer) 1
-    127.0.0.1:6379> ZADD my_sorted_set 50 John 25 Mike 75 Sara
-    (integer) 3
-    127.0.0.1:6379> ZRANGE my_sorted_set 0 -1
-    1) "Mike"
-    2) "John"
-    3) "Sara"
-    127.0.0.1:6379> ZRANGE my_sorted_set 0 -1 REV
-    1) "Sara"
-    2) "John"
-    3) "Mike"
-    127.0.0.1:6379> HSET my_hash name "John Smith" age 30
-    (integer) 2
-    127.0.0.1:6379> HGET my_hash name
-    "John Smith"
-    127.0.0.1:6379> DEL my_key
-    (integer) 1
-    ```
+<summary>Решение</summary>
+<pre><code lang="redis">
+127.0.0.1:6379> SET my_key "Hello, Redis!"
+OK
+127.0.0.1:6379> GET my_key
+"Hello, Redis!"
+127.0.0.1:6379> LPUSH my_list apple banana orange
+(integer) 3
+127.0.0.1:6379> LPOP my_list
+"orange"
+127.0.0.1:6379> LRANGE my_list 0 -1
+1) "banana"
+2) "apple"
+127.0.0.1:6379> SADD my_set red green blue
+(integer) 3
+127.0.0.1:6379> SMEMBERS my_set
+1) "green"
+2) "red"
+3) "blue"
+127.0.0.1:6379> SREM my_set green
+(integer) 1
+127.0.0.1:6379> ZADD my_sorted_set 50 John 25 Mike 75 Sara
+(integer) 3
+127.0.0.1:6379> ZRANGE my_sorted_set 0 -1
+1) "Mike"
+2) "John"
+3) "Sara"
+127.0.0.1:6379> ZRANGE my_sorted_set 0 -1 REV
+1) "Sara"
+2) "John"
+3) "Mike"
+127.0.0.1:6379> HSET my_hash name "John Smith" age 30
+(integer) 2
+127.0.0.1:6379> HGET my_hash name
+"John Smith"
+127.0.0.1:6379> DEL my_key
+(integer) 1
+</code></pre>
 </details>
